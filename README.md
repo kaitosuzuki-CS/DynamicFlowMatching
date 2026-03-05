@@ -28,9 +28,8 @@ We formulate the inference-time integration of Optimal Transport (OT) Flow Match
 
 Training reinforcement learning agents on generative ODE trajectories typically results in catastrophic VRAM Out-Of-Memory (OOM) errors. To bypass this, this repository implements a highly optimized, batched PyTorch training environment:
 
-1. **Pointer-Based Replay Buffer:** Instead of unrolling ODEs online or storing massive high-dimensional image tensors, we precompute a 3.8 GiB dataset of high-precision `dopri5` trajectories. The off-policy Replay Buffer stores lightweight pointer indices, allowing for massive batch sizes without VRAM bottlenecks.
-2. **Micro-Rollouts & Snap-Back:** During training, the agent executes an $N=3$ micro-rollout using uniform time sampling $t \sim \mathcal{U}(0, 1)$ and linear interpolation. The environment then executes a "snap-back" mechanism to the true `dopri5` manifold, preventing compounding mathematical drift from corrupting the Q-value estimations.
-3. **Continuous Action Space:** The Actor network outputs a parameterized normal distribution using the reparameterization trick to sample continuous integration steps $\Delta t \in (0, 1-t]$.
+1. **Micro-Rollouts & Snap-Back:** During training, the agent executes an $N=3$ micro-rollout using uniform time sampling $t \sim \mathcal{U}(0, 1)$ and linear interpolation. The environment then executes a "snap-back" mechanism to the true `dopri5` manifold, preventing compounding mathematical drift from corrupting the Q-value estimations.
+2. **Continuous Action Space:** The Actor network outputs a parameterized normal distribution using the reparameterization trick to sample continuous integration steps $\Delta t \in (0, 1-t]$.
 
 ---
 
