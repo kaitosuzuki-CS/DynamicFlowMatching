@@ -1,7 +1,7 @@
 # Dynamic Flow Matching: Learned Adaptive Discretization Policies for Flow Matching
 
 **Author:** Kaito Suzuki | UC Berkeley CS
-**Technical Report:** [report](https://drive.google.com/file/d/1tlEnViLA7Zd0EdySwHY_g4GIizI9iLks/view?usp=sharing)
+[[report](https://drive.google.com/file/d/1tlEnViLA7Zd0EdySwHY_g4GIizI9iLks/view?usp=sharing)]
 
 This repository contains the official PyTorch implementation of **Learned Adaptive Discretization Policies for Flow Matching via Constrained RL**.
 
