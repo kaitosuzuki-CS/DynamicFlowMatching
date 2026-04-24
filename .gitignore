@@ -110,7 +110,5 @@ mlruns/
 lightning_logs/
 
 # --- Project Specific ---
-# User requested to keep (track) samples/ and results/
-# archive/ remains ignored as it was in the original file
 archive/
 data/
